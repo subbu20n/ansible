@@ -7,7 +7,7 @@
     private: false
 
   - name: PASSWORD
-    hosts: please enter your password  
+    prompt: please enter your password  
     private: false
   tasks:
   - name: print user information
