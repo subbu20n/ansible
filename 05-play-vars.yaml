@@ -2,16 +2,11 @@
   hosts: local
   connection: local
   vars:
-   COURSE: ANSIBLE # equal to COURSE=ANSIBLE in shell , shell we refer $var ${var}
+   COURSE: ANSIBLE # equal to COURSE=ANSIBLE in shell, shell we refer $var or ${{var}}
    DURATION: 10HR
    TRAINER: Sivakumar
   tasks:
   - name: print course information
     ansible.builtin.debug:
     # vars reference should be surrounded by ""
-     msg: "Hello {{ COURSE }}, Course Duration: {{ DURATION }}, Trainer is: {{ TRAINER }}" 
-
-  - name: print course information again
-    ansible.builtin.debug:
-    # vars reference should be surrounded by """
-     msg: "Hello {{ COURSE }}, Course Duration: {{ DURATION }}, Trainer is: {{ TRAINER }}"   
+     msg: "Hello {{ COURSE }}, Course Duration: {{ DURATION }}, Trainer: {{ TRAINER }}"    
