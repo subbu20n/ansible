@@ -1,4 +1,4 @@
-- name: play1
+- name: PLAY1
   hosts: local
   connection: local
   tasks:
@@ -11,7 +11,7 @@
      msg: "Hello from PLAY-1 and TASK-2"
 
 
-- name: play2
+- name: PLAY2
   hosts: local
   connections: local
   tasks:
