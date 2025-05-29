@@ -1,6 +1,6 @@
 - name: installed nginx and run
   hosts: frontend
-  becone: yes
+  become: yes
   tasks:
   - name: install nginx
     ansible.builtin.package:
