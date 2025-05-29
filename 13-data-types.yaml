@@ -5,6 +5,7 @@
    COURSE: ANSIBLE
    DURATION: 120HR
    TRAINER: Sivakumar
+   IS_LIVE: true
    TOOLS:
    - linux
    - shell
