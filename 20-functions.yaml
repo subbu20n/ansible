@@ -1,49 +1,7 @@
 - name: functions
   hosts: local
-  connection: local
-  vars:
-   persons: "Ramesh,subbu,tarak,sitara"
-  tasks:
+  connections: local
+  tasks: 
   - name: check undefined variable
     ansible.builtin.debug:
-     msg: "Hello {{ person | default ('subbu') }}"
-
-  - name: print names   
-    ansible.builtin.debug:
-     msg: "Hello {{ persons | split(',') }}"
-
-  - name: convert map into list
-    vars:
-     course:
-       name: ansible
-       duration: 10hr
-       trainer: sivakumar
-    ansible.builtin.debug:
-     msg: "Course Info: {{ course | dict2items }}" 
-
-  - name: convert list to map
-    vars:
-     course:
-     - {'key': 'name', 'value': 'ansible'}
-     - {'key': 'duration', 'value': '10hr'}
-     - {'key': 'trainer', 'value': 'sivakumar'}
-    ansible.builtin.debug:
-     msg: "Course Info: {{ course | items2dict }}" 
-      
-  - name: convert to uppercase
-    vars: 
-     name: Sivakumar Reddy m
-    ansible.builtin.debug:
-     msg: "Hello {{ name | upper }}" 
-
-  - name: convert to lowercase
-    vars:
-     name: SIVAkumar REDdy m
-    ansible.builtin.debug:
-     msg: "Hello {{ name | lower }}"    
-
-  - name: check whether the ip is valid or not 
-    vars: 
-     ip: 162.198.67.89
-    ansible.builtin.debug:
-     msg:  "{{ ip | ansible.utils.ipaddr }}"    
+     msg: "{{ person }}"
