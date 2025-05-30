@@ -10,7 +10,7 @@
 
   - name: print names
     ansible.builtin.debug:
-     msg: "Hello {{ persons }}"   
+     msg: "Hello {{ persons | split(',') }}"   
 
   - name: convet map into list
     vars:
