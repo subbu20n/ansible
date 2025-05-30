@@ -41,3 +41,9 @@
      name: SIVAkumar REDdy m
     ansible.builtin.debug:
      msg: "Hello {{ name | lower }}"    
+
+  - name: check whether the ip is valid or not 
+    vars: 
+     ip: 300.350.421.281
+    ansible.builtin.ipadress:
+     msg: "is {{ ip | ansible.utlis.ipaddr }}"    
