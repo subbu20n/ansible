@@ -35,4 +35,22 @@
     vars:
      name: subbu name
     ansible.builtin.debug:
-     msg: "Hello {{ name | upper }}" 
+     msg: "Hello {{ name | upper }}"
+
+  - name: convert into lowercase 
+    vars:
+     name: SUBBU NANDYALA
+    ansible.builtin.debug:
+     msg: "Hello {{ name | lower}}" 
+
+  - name: check whether the ip is valid or not
+    vars:
+      ip: 300.569.478.267
+    ansible.builtin.debug:
+     msg: "{{ ip | ansible.utils.ipaddr }}"
+
+  - name: check whether the ip is valid or not
+    vars:
+      ip: 203.49.08.789
+    ansible.builtin.debug:
+     msg: "{{ ip | ansible.utils.ipaddr }}"            
