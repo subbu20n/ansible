@@ -10,4 +10,4 @@
 
   - name: print  names  
     ansible.builtin.debug:
-      msg: "{{ Persons }}"
+      msg: "{{ persons }}"
