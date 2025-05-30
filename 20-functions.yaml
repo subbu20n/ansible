@@ -33,4 +33,4 @@
   vars: 
    name: Sivakumar Reddy map
   ansible.builtin.debug:
-   msg: "Hello {{ name | upper }}" 
+    msg: "Hello {{ name | upper }}" 
