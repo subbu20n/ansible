@@ -2,12 +2,12 @@
   hosts: local
   connections: local
   vars:
-   person: "ramesh,suresh,subbu,tarak"
+   persons: "ramesh,suresh,subbu,tarak"
   tasks:
   - name: check undefined variable
     ansible.builtin.debug:
      msg: "Hello {{ person | default ('Ramesh') }}"
 
-  - name: person names  
+  - name: print  names  
     ansible.builtin.debug:
      msg: {{ Person }} 
