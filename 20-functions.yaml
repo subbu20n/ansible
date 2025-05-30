@@ -32,6 +32,6 @@
       
   - name: convert to uppercase
     vars: 
-     name: Sivakumar Reddy map
+     name: Sivakumar Reddy m
     ansible.builtin.debug:
      msg: "Hello {{ name | upper }}" 
