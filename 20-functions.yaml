@@ -40,5 +40,12 @@
     vars:
      name: SIVAKUMAR REDDY map
     ansible.builtin.debug:
-     msg: "{{ name | lowercase }}"
-       
+     msg: "{{ name | lower }}"
+
+  - name: check whether the ip is valid or not 
+    vars:
+     ip: 300.390.280.123
+    ansible.builtin.debug:
+     msg: "{{ ip | ansible.utils.ipaddr }}" 
+
+
