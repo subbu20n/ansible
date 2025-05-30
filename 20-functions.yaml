@@ -1,7 +1,7 @@
-- name: check undefined variable
+- name: functions
   hosts: local
   connection: local
   tasks: 
-  - name: persons
+  - name: check undefined variable
     ansible.builtin.debug:
      msg: "{{ person | default '(Ramesh)' }}"
