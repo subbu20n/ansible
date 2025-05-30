@@ -11,3 +11,12 @@
   - name: print names
     ansible.builtin.debug:
      msg: "Hello {{ persons }}"   
+
+  - name: convet map into list
+    vars:
+     couse:
+      name: ansible
+      duration: 10 120HR
+      trainer: Sivakumar
+    ansible.builtin.debug:
+     msg: "Course Info: {{ course | dict2items }}"  
