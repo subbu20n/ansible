@@ -3,4 +3,5 @@
   connection: local
   tasks:
   - name: redirect output to a file
-    ansible.builtin.command: "ls -ltr > /tmp/output.txt"
+   # ansible.builtin.command: "ls -ltr > /tmp/output.txt"
+    ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
