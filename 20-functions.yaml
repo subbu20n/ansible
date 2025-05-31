@@ -10,7 +10,7 @@
 
    - name: print names
      ansible.builtin.debug:
-      msg: "{{ persons }}"
+      msg: "{{ persons | split (',') }}"
 
    - name: convert map into list
      vars:
