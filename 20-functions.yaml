@@ -10,4 +10,12 @@
 
    - name: print names
      ansible.builtin.debug:
-      msg: "{{ persons }}"         
+      msg: "{{ persons }}"
+
+   - name: convert map into lists
+     vars:
+       COURSE: ANSIBLE
+       DURATION: 120HR
+       TRAINER: Sivakumar
+     ansible.builtin.debug:
+       msg: "Hello course info {{ COURSE }}, Duration {{ DURATION }}, Trainer is: {{ TRAINER }}"               
