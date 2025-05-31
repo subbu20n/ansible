@@ -41,4 +41,9 @@
       name: "SIVAKUMAR N"
     ansible.builtin.debug:
      msg: "{{ name | lower }}"     
-
+ 
+  - name: check whether ip is valid or not
+    vars: 
+     ip: 123.450.789.875
+    ansible.builtin.debug:
+     msg: "is {{ ip | ansible.utils.ipaddr }}"  
