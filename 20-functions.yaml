@@ -1,37 +1,7 @@
- - name: functions
-   hosts: local
-   connection: local
-   vars:
-     persons: "ramesh,raju,seenu,siva"
-   tasks:
-   - name: check undefined variables
-     ansible.builtin.debug:
-      msg: "{{ person | default ('ramesh') }}" 
-
-   - name: print names
-     ansible.builtin.debug:
-      msg: "{{ persons | split (',') }}"
-
-   - name: convert map into list
-     vars:
-      COURSE:
-        name: ansible
-        duration: 10HR
-        tariner: sivakumar
-     ansible.builtin.debug:
-       msg: "course info: {{ COURSE | dict2items }}"       
-
-   - name: convert list into map
-     vars: 
-      COURSE:
-      - {'key': 'name', 'value': 'ansible'}
-      - {'key': 'duration', 'value': '10HR'}
-      - {'key': 'tariner', 'value': 'sivakumar'}
-     ansible.builtin.debug:
-      msg: "{{ course | items2dict }}" 
-
-   - name: convert to  uppercase
-     vars:
-       name: "sivakumar reddy n"
-     ansible.builtin.debug:
-      msg: "Hello {{ name | upper }}"      
+- name: functions
+  hosts: local
+  connection: local
+  tasks:
+  - name: check undefined variable 
+    ansible.builtin.debug:
+     msg: "{{ person }}"
