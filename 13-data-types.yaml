@@ -1,19 +1,18 @@
-- name: ansible datatypes
-  hosts: local
-  connection: local
-  vars:
-   COURSE: ANSIBLE
-   DURATION: 120HR
-   TRAINER: Sivakumar
-   IS_LIVE: true
-   TOOLS:
-   - linux
-   - shell
-   - zip
-   CONCEPTS:
-    CI: Jenkins
-    SCRIPTING: shell,ansible,terraform,python
-  tasks:
-  - name: print course information
-    ansible.builtin.debug:
-     msg: "Hello course {{ COURSE }}, Duration {{ DURATION }}, Trainer is {{ TRAINER }}"    
+ - name: data types
+   hosts: local
+   connection: local
+   vars:
+    COURSE: DevSecOps with Aws 
+    DURATION: 120HR
+    IS_LIVE: true 
+    TOOLS:
+    - linux
+    - shell
+    - zip
+    CONCEPTS:
+     CI: Jenkins
+     SCRIPTING: shell,python.terraform,ansible
+   tasks:
+   - name: print course information
+     ansible.builtin.debug:
+      msg: "Hello {{ COURSE }}, Duration {{ DURATION }}, Trainer is {{ TRAINER }}"    
