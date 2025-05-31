@@ -28,4 +28,10 @@
       - {'key': 'duration', 'value': '10HR'}
       - {'key': 'tariner', 'value': 'sivakumar'}
      ansible.builtin.debug:
-      msg: "{{ course | items2dict }}"  
+      msg: "{{ course | items2dict }}" 
+
+   - name: print uppercase
+     vars:
+       name: sivakumar reddy name
+     ansible.builtin.debug:
+      msg: "Hello {{ name | upper }}"      
