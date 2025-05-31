@@ -1,6 +1,6 @@
 - name: conditions demo 
   hosts: local
-  commection: local
+  connection: local
   vars: 
     NUMBER: 78
   tasks: 
