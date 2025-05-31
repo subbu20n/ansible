@@ -12,7 +12,7 @@
      ansible.builtin.debug:
       msg: "{{ persons }}"
 
-   - name: convert map into lists
+   - name: convert map into list
      vars:
        COURSE: ansible
        DURATION: 10HR
