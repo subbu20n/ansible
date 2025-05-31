@@ -12,7 +12,7 @@
      msg: "{{ command_result }}"
 
   - name: redirect ls output to a file using command
-    ansible.builtin.debug: "ls -ltr"
+    ansible.builtin.command: "ls -ltr"
     register: command output
 
   - name: print the output
