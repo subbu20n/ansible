@@ -32,6 +32,6 @@
 
    - name: print uppercase
      vars:
-       name: sivakumar reddy name
+       name: "sivakumar reddy n"
      ansible.builtin.debug:
       msg: "Hello {{ name | upper }}"      
