@@ -18,4 +18,4 @@
        DURATION: 120HR
        TRAINER: Sivakumar
      ansible.builtin.debug:
-       msg: "Hello course info {{ COURSE }}, Duration {{ DURATION }}, Trainer is: {{ TRAINER }}"               
+       msg: "Hello course info {{ COURSE | dict2items }}"               
