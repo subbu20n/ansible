@@ -2,6 +2,6 @@
   hosts: local
   connection: local
   tasks: 
-  - name: check the  defined variable
+  - name: check the  undefined variable
     ansible.builtin.debug:
      msg: "Hello, {{ person }}" 
