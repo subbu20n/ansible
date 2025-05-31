@@ -30,3 +30,9 @@
     ansible.builtin.debug:
      msg: "Hello {{ course | items2dict }}"
 
+  - name: convert into uppercase
+    vars: 
+     name: "sivaKUMAr n"
+    ansible.builtin.debug:
+     msg: "{{ name | upper }}"    
+
