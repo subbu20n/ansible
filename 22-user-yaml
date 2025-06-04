@@ -1,0 +1,8 @@
+- name: user creation
+  hosts: local
+  connection: local
+  tasks: 
+  - name: check roboshop user exist or not
+    ansible.builtin.command: id roboshop
+    registe: output 
+    ignore_errors: true 
