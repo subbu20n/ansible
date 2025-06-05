@@ -1,8 +1,8 @@
 plugin: amazon.aws.aws_ec2
 regions:
 - us-east-1
-keyed_groups: #dynamic-frontend
-- key: tags.Name
+keyed_groups: 
+- key: tags.Name #dynamic-frontend
   prefix: "dynamic"
   separator: "_"
 filters:
