@@ -3,8 +3,8 @@ regions:
 - us-east-1
 keyed_groups:
 - key: tag:Name #dynamic_frontend
-prefix: "dynamic"
-seperator: "_"
+  prefix: "dynamic"
+  seperator: "_"
 filters:
   tag:Name: frontend
   instance-state-name: running
