@@ -1,6 +1,10 @@
 plugin: amazon.aws.aws_ec2
 regions:
 - us-east-1
+keyed_groups: #dynamic-frontend
+- key: tags.Name
+  prefix: "dynamic"
+  separator: "-"
 filters:
   tag:Name: frontend 
   instance-state-name : running
