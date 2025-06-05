@@ -8,6 +8,7 @@
    - mysql
    subnet_id: subnet-0ebcef8a66349e55e
    sg_id: sg-04f5b8fdb267df1bd
+   zone: subbuaws.site
   tasks:
   - name: create ec2
     amazon.aws.ec2_instance:
@@ -23,4 +24,16 @@
 
   - name: print ec2_output
     ansible.builtin.debug:
-      msg: "{{ ec2_output }}"   
+      msg: "{{ ec2_output }}"
+
+  - name: create route53 records
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_adress }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_output.results }}"
