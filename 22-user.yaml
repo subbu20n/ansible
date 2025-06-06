@@ -5,5 +5,15 @@
   - name: create subbu user exist or not
     ansible.builtin.command: id subbu
     register: output
-    ignore_errors: true     
+    ignore_errors: true 
+
+  - name: create user
+    become: yes 
+    ansible.builtin.command: useradd subbu
+    when: output.rc != 0
+
+  - name: user already exists
+    ansible.builtin.debug:
+      msg: "user already exixts"
+    when: output.rc == 0    
 
