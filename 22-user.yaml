@@ -10,7 +10,6 @@
   - name: create user
     become: yes
     ansible.builtin.command: useradd roboshop 
-    register: output
     when: output.rc ! = 0 # it means above tasks failure 
 
   - name: user already exists
