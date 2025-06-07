@@ -6,8 +6,8 @@ keyed_groups:
   prefix: "dynamic"
   seperator: "_"
 filters:
- tags:Name: frontend
- instance-state-name: running
+  tags:Name: frontend
+  instance-state-name: running
 hostsname: 
 - private-ip-address
 compose:
