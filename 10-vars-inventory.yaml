@@ -2,5 +2,5 @@
   hosts: frontend 
   tasks: 
   - name: print course information 
-    ansible.buitin.debug: 
+    ansible.builtin.debug: 
       msg: "Hello i am learning  {{ COURSE }}, Duratio {{ DURATION }}, Trainer is {{ TRAINER }}"
