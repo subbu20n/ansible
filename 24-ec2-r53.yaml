@@ -9,7 +9,7 @@
    subnet_id: subnet-0d38aa51f4166a628
    sg_id: sg-04f5b8fdb267df1bd
   tasks: 
-  - name: create ec2 
+  - name: create ec2
     amazon.aws.ec2_instance:
       name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
@@ -18,5 +18,5 @@
       image_id: ami-09c813fb71547fc4f
       tags:
        Name: "{{ item }}"
-      loop: "{{ instances }}"
-      register: ec2_output 
+    loop: "{{ instances }}"
+    register: ec2_output 
