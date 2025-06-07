@@ -9,3 +9,11 @@
   - name: print command result 
     ansible.builtin.debug: 
       msg: "{{ command_result }}"  
+
+  - name: redisrect output to a file 
+    ansible.builtin.command: "ls -ltr"
+    register: command_output 
+
+  - name: print command output
+    ansible.builtin.debug: 
+      msg: "{{ command_output }}"      
