@@ -1,6 +1,6 @@
 - name: data types
   hosts: local 
-  connection: loacl 
+  connection: local
   vars: 
     COURSE: DEVSECOPS WITH AWS 
     DURATION: 120HR 
