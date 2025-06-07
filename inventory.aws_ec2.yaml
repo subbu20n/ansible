@@ -4,6 +4,6 @@ regions:
 filters:
  tag:Name: frontend 
 hostanames:
--private-ip-address:
+- private-ip-address
 compose:
  ansible_host: private_ip_address 
