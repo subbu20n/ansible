@@ -1,7 +1,7 @@
 - name: task level variables
   hosts: local
   connection: local
-  vras: 
+  vars: 
    COURSE: DEVOPS WITH AWS
    DURATION: 10HR 
    TRAINER: Sivakumar
