@@ -13,7 +13,8 @@
 
   - name: convert map into list 
     vars:
-      course: ansible
+     course:  
+      name: ansible
       duration: 120HR
       trainer: sivakumar 
     tasks: 
