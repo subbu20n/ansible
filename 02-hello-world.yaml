@@ -1,6 +1,6 @@
 - name: hello world
   hosts: local
-  connecions: local
+  connections: local
   tasks:
   - name: print hello world
     ansible.builtin.debug: 
