@@ -11,8 +11,8 @@
     private: false  
   tasks:
   - name: print the greeting 
-    vars:
-     GREETING: Hello from tasks
+    #vars:
+     #GREETING: Hello from tasks
     ansible.builtin.debug: 
       msg: "{{ GREETING }}" 
 
