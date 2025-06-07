@@ -8,6 +8,7 @@
    - backend 
    subnet_id: subnet-0d38aa51f4166a628
    sg_id: sg-04f5b8fdb267df1bd
+   zone: subbuaws.site
   tasks: 
   - name: create ec2
     amazon.aws.ec2_instance:
@@ -23,7 +24,7 @@
 
   - name: print ec2_output 
     ansible.builtin.debug: 
-      msg: "ec2_output"
+      msg: "{{ ec2_output }}"
 
   - name: create r53 records
     amazon.aws.route53:
