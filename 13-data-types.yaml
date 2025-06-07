@@ -1,18 +1,18 @@
- - name: data types
-   hosts: local
-   connection: local
-   vars:
-    COURSE: DevSecOps with Aws 
-    DURATION: 120HR
+- name: data types
+  hosts: local 
+  connection: loacl 
+  vars: 
+    COURSE: DEVSECOPS WITH AWS 
+    DURATION: 120HR 
     IS_LIVE: true 
-    TOOLS:
-    - linux
-    - shell
-    - zip
-    CONCEPTS:
-     CI: Jenkins
-     SCRIPTING: shell,python.terraform,ansible
-   tasks:
-   - name: print course information
-     ansible.builtin.debug:
-      msg: "Hello {{ COURSE }}, Duration {{ DURATION }}, Trainer is {{ TRAINER }}, is live? {{ IS_LIVE }}"    
+    TOOLS: 
+    - linux 
+    - mysql 
+    - ansible 
+    CONCEPTS: 
+      CI: Jenkins
+      SCRIPTING: shell,pthon,terraform,ansible 
+  tasks: 
+  - name: print course information
+    ansible.builtin.debug: 
+     msg: "Hello {{ COURSE  }}, Duration {{ DURATION }}, Trainer is {{ TRAINER }}"       

@@ -3,16 +3,16 @@
   connection: local 
   vars: 
    GREETING: Hello from play
-  # vars_files:
-  # - course.yaml
+   vars_files:
+   - course.yaml
   vars_prompt:
   - name: GREETING 
     prompt: print the gretting 
     private: false  
   tasks:
   - name: print the greeting 
-    #vars:
-     #GREETING: Hello from tasks
+    vars:
+     GREETING: Hello from tasks
     ansible.builtin.debug: 
       msg: "{{ GREETING }}" 
 
