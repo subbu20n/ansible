@@ -1,7 +1,7 @@
 - name: variables from filters
   hosts: local
   connection: local 
-  vas_files:
+  vars_files:
   - course.yaml
   tasks: 
   - name: print course information 
