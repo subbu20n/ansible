@@ -1,9 +1,10 @@
-- name: variables from filters
-  hosts: local
+- name: variables from files 
+  hosts: local 
   connection: local 
-  # vars_files:
-  # - course.yaml
+  vars_fles: 
+  - course.yaml 
   tasks: 
   - name: print course information 
     ansible.builtin.debug: 
-      msg: "Hello {{ COURSE }}, Duration {{ DURATION }}, Trainer is: {{ TRAINER }}"
+     msg: "Hello {{ COURSE }} Duration {{ DURATION }} Trainer is: {{ TRAINER }}"
+
