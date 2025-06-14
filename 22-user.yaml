@@ -1,19 +1,19 @@
 - name: user creation 
-  hosts: local
+  hosts: local 
   connection: local 
-  tasks:
-  - name: check roboshop user exixt or not 
-    ansible.builtin.command: id roboshop
-    register: output
+  tasks: 
+  - name: check roboshop user already exist or not 
+    ansible.builtin.command: id roboshop 
+    register: output 
     ignore_errors: true 
 
-  - name: create user
+  - name: create user 
     become: yes 
-    ansible.builtin.command: useradd roboshop 
+    ansible.builtin.command: useradd roboshop
     when: output.rc != 0
 
-  - name: user already exist 
+  - name: user already exist
     ansible.builtin.debug: 
-      msg: "user already exist" 
-    when: output.rc == 0        
+      msg: "user already exist"
+    when: output.rc == 0              
        
