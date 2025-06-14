@@ -3,12 +3,12 @@
   become: yes 
   tasks: 
   - name: install packages 
-    ansible.builtin.dnf:
+    ansible.builtin.dnf: 
       name: "{{ item }}"
-      state: installed 
-    loop:
-    - mysql 
+      state: installed
+    loop: 
+    - mysql
     - nginx
-    - zip  
+    - zip   
 
    
