@@ -1,5 +1,5 @@
 - name: understand the preferences
-  hosta: local
+  hosts: local
   connection: local 
   vars: 
     GREETING: Hello from play 
