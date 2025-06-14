@@ -1,43 +1,28 @@
 - name: functions 
-  hosts: local 
-  connection: local
+  hosts: local
+  connection: local 
   vars: 
-   persons: ramesh,suresh,ram,seeta
+    persons: "ramesh,suresh,seets,rama"
   tasks: 
   - name: check undefined variable 
-    ansible.builtin.debug:
-     msg: "{{ person | default ('ramesh') }}"
-
-  - name: print names
     ansible.builtin.debug: 
-     msg: "Hello {{ persons | split (',') }}"       
-  
-  - name: convert map into list
-    vars: 
-      course:
-        name: ansible
-        duration: 10hr
-        trainer: sivakumar
-    ansible.buitin.debug:
-     msg: "course info: {{ course | dict2items}}"    
+      msg: "{{ person | default ('ramesh') }}"
 
-  - name: convert list to map 
-    vars: 
-      course:
-      - { 'key': 'name', 'value': 'ansible' }
-      - { 'key': 'duration', 'value': '10hr' }
-      - { 'key': 'trainer', 'value': 'sivakumar' }
+  - name: print names 
     ansible.builtin.debug: 
-      mag: "{{ course | items2dict }}"  
+      msg: "{{ persons | split (',') }}"   
 
-  - name: convert to uppercase
+  - name: convert map to list 
     vars: 
-     name: "Sivakumar"
+     course: 
+       name: ansible 
+       duration: 10hr 
+       trainer: sivakumar 
     ansible.builtin.debug: 
-      msg: "Hello {{ name | upper }}"      
+     msg: "hello {{ course | dict2items }}"
 
-  - name: convert to lowercase 
+  - name: convert  list into map
     vars: 
-     name: "SIVAKUMAR"
-    ansible.builtin.debug: 
-     msg: "Hello {{ name | lower }}"      
+    - {}      
+
+
