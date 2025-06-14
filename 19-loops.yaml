@@ -8,5 +8,5 @@
       state: "{{ item.state }}"
     loop:
     - { item: "nginx", state: "present" }
-    - { item: "mysql", item: "present" }
-    - { item: "zip", item: "absent" }
+    - { item: "mysql", state: "present" }
+    - { item: "zip", state: "absent" }
