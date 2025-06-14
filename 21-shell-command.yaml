@@ -4,7 +4,7 @@
   tasks: 
   - name: redirect to output to a file
     ansible.builtin.shell: "ls -ltr > /tmp/output.log"     
-    #ansible.builtin.command: "ls -ltr > /tmp/output.log"
+    ansible.builtin.command: "ls -ltr"
     register: command_result 
 
   - name: print command result 
