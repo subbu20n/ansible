@@ -1,16 +1,16 @@
 - name: play level variables
-  hosts: local 
-  connection: local
+  hosts: local
+  connection: local 
   vars:
-    COURSE: ANSIBLE
+    COURSE: ANSIBLE 
     DURATION: 10HR 
-    TARINER: Sivakumar 
+    TRAINER: Sivakumar 
   tasks: 
-  - name: print course information
-    ansible.builtin.debug:
-      msg: "Hello {{ COURSE }}, Duration {{ DURATION }},Trainer is :{{ TRAINER }}"
+  - name:  print course information 
+    ansible.builtin.debug: 
+      msg: "Hello {{ COURSE }} Duration {{ DURATION }} Trainer is: {{ TRAINER }}"
+            
 
   - name: print course information 
-    ansible.builtin.debug:
-      msg: "Hello {{ COURSE }}, Duration {{ DURATION }}, Trainer is:{{ TRAINER }}"    
-            
+    ansible.builtin.debug: 
+     msg: "Hello {{ COURSE }} Duration {{ DURATION }} Trainer is:  {{ TARINER }}"          
