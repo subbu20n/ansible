@@ -1,4 +1,4 @@
-- name: understand the preferances 
+- name: understand the preferences
   hosta: local
   connection: local 
   vars: 
