@@ -12,7 +12,7 @@
     ansible.builtin.debug: 
      msg: "Hello {{ persons | split (',') }}"       
   
-  - name: convert list to map 
+  - name: convert mao to list
     vars: 
       course:
         name: ansible
@@ -21,7 +21,7 @@
     ansible.buitin.debug:
      msg: "{{ corse | items2dict }}"    
 
-  - name: convert map to list 
+  - name: convert list to map 
     vars: 
       course:
       - { 'key': 'name', 'value': 'ansible' }
