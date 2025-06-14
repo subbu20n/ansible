@@ -21,8 +21,7 @@
     ansible.builtin.debug: 
      msg: "hello {{ course | dict2items }}"
 
-  - name: convert  list into map
-    vars: 
-    - {}      
+  
+          
 
 
