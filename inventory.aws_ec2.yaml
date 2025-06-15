@@ -1,14 +1,10 @@
 plugin: amazon.aws.aws_ec2
 regions:
 - us-east-1
-keyed_groups:
-- key: tags.Name #dynamic_frontend
-  prefix: "dynamic"
-  seperator: "_"
 filters:
-  tag:Name: frontend
-  instance-state-name: running
-hostnames: 
-- private-ip-address
+ tag:Name: frontend 
+ instance-state-name: running 
+hostnames:
+- private-ip--address  
 compose:
- ansible_host: private_ip_address 
+ ansible_host: privata_ip_address
