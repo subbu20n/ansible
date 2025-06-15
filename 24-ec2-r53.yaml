@@ -29,7 +29,7 @@
 
   - name: create r53 records 
     ansible.builtin.route53:
-      state: presen
+      state: present
       zone: "{{ zone }}" 
       type: "A"
       ttl: 1 
