@@ -6,9 +6,9 @@
     - mysql
     - backend
     - frontend 
-  subnet_id: "subnet-0d38aa51f4166a628"
-  sg_id: "sg-04f5b8fdb267df1bd"
-  zone: "subbuaws.site"
+    subnet_is: "subnet-0d38aa51f4166a628"
+    sg_id: "sg-04f5b8fdb267df1bd"
+    zone: "subbuaws.site"
 
   tasks: 
   - name: create ec2 
