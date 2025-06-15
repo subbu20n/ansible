@@ -1,50 +1,50 @@
-- name: create ec2 and r53 records 
+- name: create ec2 and r53 reords 
   hosts: local 
   connection: local 
   vars: 
-   instances:
-   - mysql
-   - backend 
-   - frontend 
-   subnet_id: "subnet-0d38aa51f4166a628"
-   sg_id: "sg-04f5b8fdb267df1bd"
-   zone: "subbuaws.site"
+    instances: 
+    - mysql
+    - backend
+    - frontend 
+
   tasks: 
-  - name: create ec2
-    amazon.aws.ec2_instance:
-      name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      security_group: "{{ sg_id }}"
-      instance_type: "t3.micro"
-      image_id: "{{ ami-09c813fb71547fc4f }}"
-      tags: 
-       Name: "{{ item }}"
-    loop: "{{ instances }}"
-    register: ec2_output 
+  - name: create ec2 
+    amazon.aws.ec2_instance: 
+       name: "{{ item }}" 
+       vpc_subnet_id: "{{ subnet_id }}"
+       security_group: "{{ sg_id }}"
+       instance_type: "t3.micro"
+       image_id: ""
+       tags: 
+         Name: "{{ item }}"
+    loop: "{{ instances }}" 
+    register: ec2_output
 
-  - name: print ec2_output 
-    ansible.builtin.debug:
-     msg: "{{ ec2_output }}"
-
-  - name: create route53
-    amazon.aws.route53:
-      state: present 
-      zone: "{{ zone_id }}"
-      tpye: "A" 
-      ttl: 1
-      record: "{{ item.item }}.{{ zone }}"
-      value: "{{ item.instances[0].private_ip_address }}"
-    loop: "{{ ec2_output.results }}"
+  - name: print ec2_ouutput 
+    ansible.builtin.debug: 
+      msg: "{{ ec2_output.results }}" 
 
   - name: create route53 records 
     ansible.builtin.route53:
-      state: present
-      zone: "{{ zone }}"
-      record: "{{ zone }}" 
+      state: presen
+      zone: "{{ zone }}" 
       type: "A"
       ttl: 1 
-      value: "{{ var.instances[0].public_ip_address }}" 
+      record: "{{ item.item }}.{{ zone }}" 
+      value: "{{ item.instances[0].private_ip-address }}" 
       wait: true 
       overwrite: true 
-    loop: "{{ ec2_output.results }}"
-    when: item.item == "frontend"
+    loop: "{{ec2_output.results }}" 
+
+  - name: create route53 records 
+    ansible.builtin.route53:
+      state: present 
+      zone: "{{ zone }}" 
+      type: "A" 
+      ttl: 1 
+      record: "{{ zone }}" 
+      value: "{{ item.instances[0].public_ip_address }}" 
+      wait: true 
+      overwrite: true 
+    loop: "{{ ec2_output.results }}" 
+    when: item.item == "frontend" 
