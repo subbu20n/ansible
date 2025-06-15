@@ -5,6 +5,6 @@ filters:
  tag:Name: frontend 
  instance-state-name: running 
 hostnames:
-- private-ip--address  
+- private-ip-address  
 compose:
- ansible_host: privata_ip_address
+ ansible_host: private_ip_address
