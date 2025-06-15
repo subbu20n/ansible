@@ -37,7 +37,8 @@
       value: "{{ item.instances[0].private_ip_ddress }}" 
       wait: true 
       overwrite: true 
-    loop: "{{ ec2_output.results }}"  
+    loop: "{{ ec2_output.results }}" 
+    when: item.instances[0].private_ip_address
 
   - name: create r53 records 
     ansible.builtin.route53:
