@@ -2,11 +2,11 @@
   hosts: frontend 
   become: yes 
   tasks: 
-  - name: install pckages 
-    ansible.builtin.dnf:
-      name: "{{ item.name }}"
-      state: "{{ item.state }}"
-    loop: 
-    - { name: 'nginx', state: 'absent' }
-    - { name: 'mysql', state: 'present' }
-    - { name: 'zip', state: 'absent' }
+  - name: install packages 
+    ansible.builtin.package: 
+       name: "{{ item.name }}"
+       state: "{{ item.state }}"
+    loop:
+    - {name: 'nginx', state: 'present'}
+    - {name: 'mysql', state: 'abset'}
+    - {name: 'zip', state: "absent"}   
