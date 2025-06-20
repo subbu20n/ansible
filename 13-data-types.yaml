@@ -1,19 +1,19 @@
-- name: data types
-  connection: local
+- name: ansible datatypes 
   hosts: local 
-  vars: 
-   COURSE: subbu
-   DURATION: 120HR 
+  connection: local 
+  vars:
+   COURSE: ANSIBLE 
+   DURATION: 120 HR 
    TRAINER: Sivakumar
-   IS_LIVE: true
-   TOOLS:
-   - mysql
-   - shell
-   - ansible 
-   CONCEPTS:
-     CI: Jenkins
-     SCRIPTING: shell,python,ansible,ansible 
+   Tools:
+   - linux 
+   - ansible
+   - shell 
+   IS_LIVE: true 
+   CONCEPTS: 
+     CI: Jenkins 
+     SCRIPTING: shell,ansible,terraform,python 
   tasks: 
-  - name: print course information 
+  - name: print the course information 
     ansible.builtin.debug: 
-     msg: "Hello {{ COURSE }} Duration {{ DURATION }} Trainer is {{ TRAINER }} Is_live ?{{ IS_LIVE }} Tools are: {{ TOOLS }} Concepts are {{ CONCEPTS}}"   
+      msg: "Hello {{ COURSE }}, Duration {{ DURATION }} IS_LIVE? {{ IS_LIVE }}, Trainer is {{ TRAINER }},CONCEPTS {{ CONCEPTS }}"    
