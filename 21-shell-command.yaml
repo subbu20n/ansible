@@ -3,4 +3,4 @@
   become: yes 
   tasks: 
   - name: redirect output to a file 
-    ansible.builtin.command: "ls -ltr > /tmp/output.log"
+    ansible.builtin.shell: "ls -ltr > /tmp/output.log"
