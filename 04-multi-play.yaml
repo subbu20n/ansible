@@ -2,7 +2,7 @@
   hosts: local 
   connection: local 
   tasks: 
-  - name: print play1 
+  - name: print play1 and task1
     ansible.builtin.debug: 
       msg: "HeLLO PLAY1 AND TASK1"
 
