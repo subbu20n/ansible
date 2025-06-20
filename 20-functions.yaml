@@ -36,10 +36,16 @@
      name: SIVASHANKAR
     ansible.builtin.debug:
      msg: "{{ name | lower}}"  
-    ignore_errors: true  
+     
 
   - name: convert to uppercase 
     vars: 
      name: sivakumar 
     ansible.builtin.debug:
      msg: "{{ name | upper}}" 
+
+  - name: check ip address is valid or notify
+    vars: 
+     ip: 300.400.400.89
+    ansible.builtin.debug:
+      msg: "{{ ip | ansible.utils.ipadddr }}"     
