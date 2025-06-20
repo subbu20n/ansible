@@ -7,7 +7,7 @@
       msg: "HeLLO PLAY1 AND TASK1"
 
   - name: print play1 and task2 
-    ansibl.buitlin.debug:
+    ansible.buitlin.debug:
       msg: "Hello from play1 and task2"    
 
 - name: play2 
