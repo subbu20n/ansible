@@ -46,6 +46,6 @@
 
   - name: check ip address is valid or notify
     vars: 
-     ip: 300.400.400.89
+     ip: "300.400.400.89"
     ansible.builtin.debug:
       msg: "{{ ip | ansible.utils.ipadddr }}"     
