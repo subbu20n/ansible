@@ -1,6 +1,6 @@
 - name: ping the server 
   hosts: keys
-  become: keys 
+  become: yes 
   tasks:
   - name: install nginx 
     ansible.builtin.dnf:
