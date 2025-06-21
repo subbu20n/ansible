@@ -6,8 +6,8 @@
    - mysql
    - backend 
    - frontend 
-   subnet_id: ""
-   sg_id: 
+   subnet_id: "subnet-0ebcef8a66349e55e"
+   sg_id: "sg-04f5b8fdb267df1bd"
    zone: "subbuaws.site" 
   tasks: 
   - name: create ec2 
@@ -15,7 +15,7 @@
       name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
       security_group: "{{ sg_id }}"
-      image_id: ""
+      image_id: "ami-09c813fb71547fc4f"
       tags: 
        Name: "{{ item }}"
     loop: "{{ instances }}"
