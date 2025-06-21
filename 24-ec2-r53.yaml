@@ -1,50 +1,47 @@
-- name: create ec2 and r53 records 
+- name: create ec2 and route53 
   hosts: local 
   connection: local 
-  vars:
-    instances: 
-    - mysql
-    - backend 
-    - frontend 
-    subnet_id: "subnet-0ebcef8a66349e55e"
-    sg_id: "sg-04f5b8fdb267df1bd"
-    zone: "subbuaws.site"
+  vars: 
+   instances:
+   - mysql
+   - backend 
+   - frontend 
+   subnet_id: ""
+   sg_id: 
+   zone: "subbuaws.site" 
   tasks: 
   - name: create ec2 
     amazon.aws.ec2_instance:
-       name: "{{ item }}"
-       vpc_subnet_id: "{{ subnet_id }}"
-       security_group: "{{ sg_id }}"
-       image_id: "ami-09c813fb71547fc4f"  
-       instance_type: "t3.micro"
-       tags: 
-         Name: "{{ item }}"
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      security_group: "{{ sg_id }}"
+      image_id: ""
+      tags: 
+       Name: "{{ item }}"
     loop: "{{ instances }}"
-    register: ec2_output 
+    register: "ec2_output"
 
-  - name: print ec2_output 
+  - name: print ec2 output 
     ansible.builtin.debug: 
-      msg: "{{ ec2_output }}"     
+      msg: "{{ ec2_output }}"
 
   - name: create route53 records 
     amazon.aws.route53:
       state: present 
-      zone: "{{ zone }}"
-      type: "A"
-      ttl: 1
+      type: "A" 
+      ttl: 1 
       record: "{{ item.item }}.{{ zone }}"
       value: "{{ item.instances[0].private_ip_address }}"
       wait: true 
       overwrite: true 
-    loop: "{{ ec2_output.results }}"    
+    loop: "{{ ec2_output.results }}"
 
   - name: create route53 records 
     amazon.aws.route53:
       state: present 
-      zone: "{{ zone }}"
       type: "A"
       ttl: 1 
-      record: "{{ item.item }}.{{ zone }}"
+      record: "{{ item.item }}.{{ zone}}"
       value: "{{ item.instances[0].public_ip_address }}"
       wait: true 
       overwrite: true 
