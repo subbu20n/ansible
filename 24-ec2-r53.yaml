@@ -41,7 +41,7 @@
       state: present 
       type: "A"
       ttl: 1 
-      record: "{{ item.item }}.{{ zone}}"
+      record: "{{ zone}}"
       value: "{{ item.instances[0].public_ip_address }}"
       wait: true 
       overwrite: true 
