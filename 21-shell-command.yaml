@@ -10,3 +10,5 @@
   - name: print command_result 
     ansible.builtin.debug:
       msg: "{{ command_result }}"  
+
+  
