@@ -8,7 +8,7 @@
     - frontend 
     subnet_id: "subnet-0ebcef8a66349e55e"
     sg_id: "sg-04f5b8fdb267df1bd"
-    zone: "{{ zone }}"
+    zone: "subbuaws.site"
   tasks: 
   - name: create ec2 
     amazon.aws.ec2_instance:
