@@ -8,4 +8,4 @@
 
   - name: print command output  
     ansible.builtin.debug: 
-      msg: "{{ command_output }}"  
+      msg: "{{ command_result }}"  
