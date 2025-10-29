@@ -2,22 +2,23 @@
   hosts: local 
   connection: local 
   tasks: 
-  - name: hello from play1 and task1
+  - name: hello from play1 and task1 
     ansible.builtin.debug: 
-      msg: "HELLO PLAY-1 AND TASK-1"
+      msg: "Hello from PLAY1 AND TASK1" 
 
-  - name: hello from play1 and task2 
-    ansible.builtin.debug:
-      msg:  "HELLO FROM PLAY-1 AND TASK-2"
+  - name: hello from play2 and task2 
+    ansible.builtin.debug: 
+      msg: "Hello from PLAY2 and TASK2" 
 
 - name: play2 
   hosts: local 
   connection: local 
   tasks: 
-  - name: hello from play2 and task1
-    ansible.builtin.debug:
-      msg: "HELLO FROM PLAY-2 AND TASK-1"
+  - name: hello from play2 and task2 
+    ansible.builtin.debug: 
+      msg: "Hello from PLAY2 AND TASK2" 
 
-  - name: hello from  play2 and task2 
-    ansible.builtin.debug:
-      msg: "HELLO FROM PLAY-2 AND TASK-2"  
+  - name: hello from play2 and task2 
+    ansible.builtin.debug: 
+      msg: "Hello form PLAY2 AND TASK2" 
+                  
