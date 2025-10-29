@@ -18,6 +18,6 @@
         name: ansible 
         diration: 10hr 
         trainer: siva 
-    ansible.builtin,debug: 
+    ansible.builtin.debug: 
       msg: "{{ course | dict2items }}"
   
