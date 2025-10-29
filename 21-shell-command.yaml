@@ -1,5 +1,5 @@
 - name: shell vs command 
-  hosts: forntend 
+  hosts: frontend 
   become: yes 
   tasks: 
   - name: redirect output to a file 
