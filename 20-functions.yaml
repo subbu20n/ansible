@@ -10,7 +10,7 @@
 
   - name: print names 
     ansible.builtin.debug: 
-      msg: "Hello {{ persons | split (',') }}" 
+      msg: "Hello {{ persons | split (',') }}"
   
   - name: convert map into list 
     vars: 
@@ -24,8 +24,8 @@
   - name: convert list into map 
     vars: 
       courses: 
-         - { "key": "name","value": "ansible" }
-         - { "key": "diration","value": "10hr" }
-         - { "key": "trainer","value": "siva" } 
+         - { 'key': 'name','value': 'ansible'}
+         - { 'key': 'diration','value': '10hr'}
+         - { 'key': 'trainer','value': 'siva'} 
     ansible.builtin.debug: 
-      msg: "{{ persons | items2dict }}"    
+      msg: "{{ persons | items2dict }}"
