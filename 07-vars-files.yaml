@@ -1,8 +1,8 @@
 - name: variables form files 
   hosts: local 
   connection: local 
-  vars_files: 
-  - course.yaml 
+  #vars_files: # we wont include here file this will throw a error ok 
+  #- course.yaml 
   tasks: 
   - name: print course information 
     ansible.builtin.debug: 
