@@ -3,9 +3,9 @@
   become: yes 
   tasks: 
   - name: redirect output to a file 
-    ansible.builtin.command: "ls-ltr" 
-    register: "command_output" 
+    ansible.builtin.command: ls-ltr 
+    register: command_result  
 
-  - name: print  command output 
+  - name: print command output  
     ansible.builtin.debug: 
       msg: "{{ command_output }}"  
