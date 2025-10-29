@@ -1,19 +1,19 @@
-- name: ansible datatypes 
+- name: data types 
   hosts: local 
   connection: local 
-  vars:
-   COURSE: ANSIBLE 
-   DURATION: 120 HR 
-   TRAINER: Sivakumar
-   Tools:
+  vars: 
+   COURSE: DEVSECOPS WITH AWS
+   DURATION: 120HR 
+   TRAINER: SIVA 
+   IS_LIVE: TRUE 
+   TOOLS: #LIST 
    - linux 
-   - ansible
-   - shell 
-   IS_LIVE: true 
+   - shell
+   - nginx 
    CONCEPTS: 
      CI: Jenkins 
-     SCRIPTING: shell,ansible,terraform,python 
+     SCRIPTING: Shell,Ansible,Terraform,Python 
   tasks: 
-  - name: print the course information 
+  - name: print course information 
     ansible.builtin.debug: 
-      msg: "Hello {{ COURSE }}, Duration {{ DURATION }} IS_LIVE? {{ IS_LIVE }}, Trainer is {{ TRAINER }},CONCEPTS {{ CONCEPTS }}"    
+      msg: "Hello {{ COURSE }},duration {{ DURATION }}, Trainer is {{ TRAINER }}, is_live?:{{ IS_LIVE }},Concepts are:{{ CONCEPTS }}"   
