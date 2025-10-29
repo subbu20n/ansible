@@ -1,12 +1,12 @@
 - name: install packages 
   hosts: frontend 
-  become: yes  
+  become: yes 
   tasks: 
   - name: install packages 
     ansible.builtin.package: 
-      name: "{{ item.name }}"
-      state: "{{ item.state }}"
+      name: "{{ item.name }}" 
+      state: "{{ item.state }}" 
     loop: 
-    - {name: "nginx", state: "absent"}
-    - {name: "mysql", state: "present"}
-    - {name: "zip", state: "absent"}
+    - { name: 'nginx', state: 'present' }  
+    - { name: 'mysql', state: 'absent' } 
+    - { name: 'zip', state: 'absent' } 
