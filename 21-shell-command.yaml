@@ -3,8 +3,8 @@
   become: yes 
   tasks: 
   - name: redirect output to a file 
-    #ansible.builtin.command: "ls -ltr" 
-    ansible.builtin.shell: "ls -ltr > /tmp/output.txt" 
+    ansible.builtin.command: "ls -ltr" 
+    #ansible.builtin.shell: "ls -ltr > /tmp/output.txt" 
     register: command_output 
 
   - name: print command output 
