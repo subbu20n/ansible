@@ -1,8 +1,8 @@
-- name: variables from prompt 
-  connection: local 
+- name: variables form prompt 
   hosts: local 
-  vars_prompt:
-  - name: USERNAME
+  connection: local 
+  vars_prompt: 
+  - name: USERNAME 
     prompt: please enter your username 
     private: true 
 
@@ -11,6 +11,6 @@
     private: true 
 
   tasks: 
-  - name: print course information 
-    ansible.builtin.debug:
-      msg: "Hello {{ USERNAME }} {{ PASSWORD }}"     
+  - name: print user information 
+    ansible.builtin.debug: 
+      msg: "Hello {{ USERNAME }} and {{ PASSWORD }}"    
