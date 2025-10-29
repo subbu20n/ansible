@@ -35,4 +35,10 @@
       name: "subbu" 
     ansible.builtin.debug: 
       msg: "{{ name | upper }}"  
+
+  - name: convert into lower 
+    vars: 
+      name: "SUBBU" 
+    ansible.builtin.debug: 
+      msg: "{{ name | lower }}" 
       
