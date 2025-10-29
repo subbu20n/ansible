@@ -1,7 +1,7 @@
-- name: vars from args 
+- name: variables form args 
   hosts: local 
   connection: local 
   tasks: 
-  - name: print course informaton 
+  - name: print course information 
     ansible.builtin.debug: 
-      msg: "Hello i am learning {{ COURSE }}, Duration {{ DURATION }}, Trainer is {{ TRAINER }}"
+     msg: "Hello {{ COURSE }}, duration {{ DURATION }}, Trainer is {{ TRAINER }}" 
