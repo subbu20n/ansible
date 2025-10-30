@@ -5,15 +5,15 @@
   - name: check roboshop user exist or not 
     ansible.builtin.command: id roboshop 
     register: output 
-    ignore_errors: true 
+    ignore_errors: ture  
 
   - name: create user 
     become: yes 
-    ansible.builtin.command: useradd roboshop
-    when: output.rc != 0 #if above task failures 
-  
+    ansible.builtin.command: useradd roboshop 
+    when: output.rc != 0 # if above task failures 
+
   - name: user already exist 
     ansible.builtin.debug: 
-      msg: "user already exist"
-    when: output.rc == 0 # if above task failures  
-  
+      msg: "user already exist" 
+    when: output.rc == 0 #if above task failures 
+         
