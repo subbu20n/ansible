@@ -10,7 +10,7 @@
   - name: create user 
     become: yes 
     ansible.builtin.command: useradd roboshop
-    when: outpout.rc != 0 #if above task failures 
+    when: output.rc != 0 #if above task failures 
   
   - name: user already exist 
     ansible.builtin.debug: 
