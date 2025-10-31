@@ -6,7 +6,7 @@
     - mysql 
     - backend
     - frontend 
-  subnet_id: subnet-01f4588188d1c6d77
+  subnet_id: subnet-0bb6a6110e9180b91
   sg_id: sg-0ad4f1d9859b4f090
   zone: subbuaws.site 
   tasks: 
