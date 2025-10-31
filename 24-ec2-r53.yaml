@@ -25,8 +25,8 @@
     ansible.builtin.debug: 
       msg: "{{ec2.output }}" 
 
-  - name: create route53 
-    amazon.aws_route53: 
+  - name: create route53 records 
+    amazon.aws.route53: 
       state: present 
       zone: "{{ zone }}" 
       record: "{{ item.item }}.{{ zone }}" 
