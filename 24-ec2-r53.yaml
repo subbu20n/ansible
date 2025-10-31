@@ -31,7 +31,7 @@
       state: present 
       zone: "{{ zone }}" 
       record: "{{ item.item }}.{{ zone }}" 
-      value: "{{ value.instances[0].private_ip_address }}" 
+      value: "{{ item.instances[0].private_ip_address }}" 
       ttl: 1
       type: A 
       wait: true 
@@ -44,7 +44,7 @@
       state: present 
       zone: "{{ zone }}" 
       record: "{{ zone }}"
-      value: "{{ value.instances[0].private_ip_address }}" 
+      value: "{{ item.instances[0].private_ip_address }}" 
       ttl: 1
       type: A 
       wait: true 
