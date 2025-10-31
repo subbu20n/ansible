@@ -7,13 +7,13 @@ keyed_groups:
   - key: tags.Name
     prefix: ""
     separator: ""
-    
+
 filters:
   tag:Name: frontend
   instance-state-name: running
 
 hostnames:
-  - private_ip_address
+  - private-ip-address
 
 compose:
   ansible_host: private_ip_address
