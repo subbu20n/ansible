@@ -26,7 +26,7 @@
     ansible.builtin.debug: 
       msg: "{{ec2_output }}" 
 
-  - name: create route53 records 
+  - name: create r53 records 
     amazon.aws.route53: 
       state: present 
       zone: "{{ zone }}" 
@@ -39,7 +39,7 @@
     loop: "{{ ec2_output.results }}" 
 
          
-  - name: create route53 records
+  - name: create r53 records
     amazon.aws.route53: 
       state: present 
       zone: "{{ zone }}" 
