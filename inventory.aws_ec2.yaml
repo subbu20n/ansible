@@ -3,17 +3,17 @@ plugin: amazon.aws.aws_ec2
 regions:
   - us-east-1
 
+keyed_groups:
+  - key: tags.Name
+    prefix: ""
+    separator: ""
+    
 filters:
   tag:Name: frontend
   instance-state-name: running
 
 hostnames:
   - private_ip_address
-
-keyed_groups:
-  - key: tags.Name
-    prefix: ""
-    separator: ""
 
 compose:
   ansible_host: private_ip_address
