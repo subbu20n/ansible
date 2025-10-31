@@ -2,48 +2,51 @@
   hosts: local 
   connection: local 
   vars: 
-   instances:
-   - mysqllll
-   - backend 
-   - frontend 
-   subnet_id: "subnet-0ebcef8a66349e55e"
-   sg_id: "sg-04f5b8fdb267df1bd"
-   zone: "subbuaws.site" 
+    instances:  
+    - mysql 
+    - backend
+    - frontend 
+  subnet_id: subnet-01f4588188d1c6d77
+  sg_id: sg-0ad4f1d9859b4f090
+  zone: subbuaws.site 
   tasks: 
   - name: create ec2 
-    amazon.aws.ec2_instance:
-      name: "{{ item }}"
+    amazon.aws.ec2_instance: 
+      name: "{{ item }}" 
       vpc_subnet_id: "{{ subnet_id }}"
-      security_group: "{{ sg_id }}"
-      image_id: "ami-09c813fb71547fc4f"
-      tags: 
-       Name: "{{ item }}"
-    loop: "{{ instances }}"
-    register: "ec2_output"
+      security_group: "{{ sg_id }}" 
+      instance_type: t2.micro 
+    tags: 
+      name: "{{ item }}" 
+    loop: "{{ instances }}"  
+    register: ec2.output 
 
   - name: print ec2 output 
     ansible.builtin.debug: 
-      msg: "{{ ec2_output }}"
+      msg: "{{ec2.output }}" 
 
-  - name: create route53 records 
-    amazon.aws.route53:
+  - name: create route53 
+    amazon.aws_route53: 
       state: present 
-      type: "A" 
-      ttl: 1 
-      record: "{{ item.item }}.{{ zone }}"
-      value: "{{ item.instances[0].private_ip_address }}"
+      zone: "{{ zone }}" 
+      record: "{{ item.item }}.{{ zone }}" 
+      value: "{{ value.instances[0].private_ip_address }}" 
+      ttl: 1
+      type: A 
       wait: true 
       overwrite: true 
-    loop: "{{ ec2_output.results }}"
+    loop: "{{ ec2.output.results }}" 
 
-  - name: create route53 records 
-    amazon.aws.route53:
+         
+  - name: create route53 
+    amazon.aws_route53: 
       state: present 
-      type: "A"
-      ttl: 1 
-      record: "{{ zone}}"
-      value: "{{ item.instances[0].public_ip_address }}"
+      zone: "{{ zone }}" 
+      record: "{{ zone }}"
+      value: "{{ value.instances[0].private_ip_address }}" 
+      ttl: 1
+      type: A 
       wait: true 
       overwrite: true 
-    loop: "{{ ec2_output.results }}"
-    when: item.item == "frontend"      
+    loop: "{{ ec2.output.results }}" 
+    when: item.item == frontend 
