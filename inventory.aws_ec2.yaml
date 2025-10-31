@@ -6,7 +6,7 @@ keyed_groups:
    instance-state-name: running 
 
 filters: 
-  tag:Nmae: frontend 
+  tag:Name: frontend 
 
 hostnames:
  - private-ip-address 
