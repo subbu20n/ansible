@@ -4,7 +4,7 @@ regions:
 keyed_groups: 
  - key: tag.name 
 prefix: "" 
-suffix: ""
+seperator: ""
 filters: 
  tag:Name: frontend 
  instance-state-name: running 
