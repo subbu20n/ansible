@@ -8,7 +8,7 @@ filters:
 hostnames: 
  - private_ip_address 
 keyed_groups: 
-  - key: tag.Name 
+  - key: tags.Name 
     prefix: "" 
     separator: ""
 compose: 
