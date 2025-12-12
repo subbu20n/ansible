@@ -1,6 +1,6 @@
 - name: shell v/s command 
-  hosts: frontend 
-  connection: local
+  hosts: local 
+  connection: local 
   tasks: 
   - name: redirect to a file 
     #ansible.builtin.command: "ls -ltr > /tmp/anssible.txt"
