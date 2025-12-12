@@ -1,7 +1,7 @@
-- name: playbook control using ansible fatcs 
+- name: playbook control using ansible facts 
   hosts: frontend 
   become: yes 
-  tasks: 
+  tasks:  
   - name: install nginx if redhat 
     ansible.builtin.dnf: 
        name: nginx 
@@ -10,6 +10,6 @@
 
   - name: install nginx if debian 
     ansible.builtin.apt: 
-       name: nginx 
-       state: present 
-    when: ansible_os_family == "debian"         
+      name: nginx 
+      state: installed 
+    when: asnsible_os-family == "Debian"       
