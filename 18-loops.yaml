@@ -2,11 +2,11 @@
   hosts: frontend 
   become: yes 
   tasks: 
-  - name: install the packages 
-    ansible.builtin.dnf: 
-       name: "{{ item }}" 
-       state: installed 
+  - name: install packages 
+    ansible.builtin.package: 
+      name: "{{ item }}" 
+      state: installed 
     loop: 
-    - nginx 
     - mysql 
-    - zip    
+    - nginx 
+    - zip   

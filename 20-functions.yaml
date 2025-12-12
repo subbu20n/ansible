@@ -3,6 +3,7 @@
   connection: local 
   vars: 
    persons: "subbu,chinna,arun,tharun"
+   person: subbu 
   tasks: 
   - name: check undefined variable 
     ansible.builtin.debug: 
@@ -44,6 +45,6 @@
 
   - name: check ip address is valid or not 
     vars: 
-      ip: "234.675.876.900"
+      ip: "234.675.876.900" 
     ansible.builtin.debug: 
       msg: "{{ ip | ansible.utils.ipaddr }}"
