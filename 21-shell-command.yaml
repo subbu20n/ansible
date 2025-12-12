@@ -1,12 +1,12 @@
-- name: shell v/s command 
-  hosts: local 
-  connection: local 
+- name: shell vs command 
+  hosts: frontend 
+  become: yes 
   tasks: 
-  - name: redirect to a file 
-    #ansible.builtin.command: "ls -ltr > /tmp/anssible.txt"
-    ansible.builtin.shell: "ls -ltr > /tmp/anssible.txt"
+  - name: redirect output to a file 
+    ansible.builtin.command: "ls -ltr" 
+    #ansible.builtin.shell: "ls -ltr > /tmp/output.txt" 
     register: command_output 
 
-  - name: print outcome 
+  - name: print command output 
     ansible.builtin.debug: 
-      msg: "{{ command_output }}"  
+      msg: "{{ command_output }}" 
