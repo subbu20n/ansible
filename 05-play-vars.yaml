@@ -7,6 +7,6 @@
      TRAINER: SIVAKUMAR
   tasks: 
   - name: print course information 
-    ansible.buitin.debug: 
+    ansible.bui1tin.debug: 
       msg: "Hello course: {COURSE}, duration: {DUARTION}, trainer:{Trainer}" 
   
