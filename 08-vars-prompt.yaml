@@ -12,4 +12,4 @@
   tasks: 
   - name: print user information 
     ansible.builtin.debug: 
-      msg: "hello {username} and {password}"     
+      msg: "hello username is: {username} and password is: {password}"     
