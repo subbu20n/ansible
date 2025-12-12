@@ -1,19 +1,19 @@
-- name: ansible datatypes 
+- name: data types 
   hosts: local 
   connection: local 
   vars: 
-    COURSE: "DEVSECOPS WITH AWS" #STRING 
-    DURATION: 120HR #NUMBER 
-    TRAINER: SIVAKUMAR
-    IS_LIVE: True #boolean 
-    TOOLS: #LIST 
-    - linux 
-    - ansible 
-    - shell
-    CONCEPTS: #map or object or dict {}
-      CI: Jenkins 
-      Scripting: Shell,Ansible,Terraform,Python 
+   COURSE: "DEVSECOPS WITH AWS" #string 
+   DURATION: 120HR 
+   TRAINER: SIVA 
+   IS_LIVE: TRUE #boolean 
+   TOOLS: #LIST 
+   - linux 
+   - shell
+   - nginx 
+   CONCEPTS: # map or dict or object 
+     CI: Jenkins 
+     SCRIPTING: Shell,Ansible,Terraform,Python 
   tasks: 
-  - name: print the datatypes information     
+  - name: print course information 
     ansible.builtin.debug: 
-      msg: "Hello, course is: {COURSE}, duration: {DURATION},trainer is: {TRAINER}, is live?: {IS_LIVE},tools are: {TOOLS},concepts are: {CONCEPTS}"
+      msg: "Hello {{ COURSE }}, duration {{ DURATION }}, Trainer is {{ TRAINER }}, is_live?: {{ IS_LIVE }}, Tools are: {{ TOOLS }}, Concepts are: {{ CONCEPTS }}"   
