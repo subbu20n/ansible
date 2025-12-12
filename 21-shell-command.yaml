@@ -3,8 +3,8 @@
   become: yes 
   tasks: 
   - name: redirect output to a file 
-    ansible.builtin.command: "ls -ltr" 
-    #ansible.builtin.shell: "ls -ltr > /tmp/output.txt" 
+    ansible.builtin.command: "ls -ltr" # redirections , piping, variables does not work here "outside" execution only linux full environment 
+    #ansible.builtin.shell: "ls -ltr > /tmp/output.txt"  # here login to "inside" server and execute tasks,redirections ,variables will work here 
     register: command_output 
 
   - name: print command output 
