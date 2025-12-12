@@ -2,16 +2,16 @@
   hosts: local 
   connection: local 
   vars: 
-   COURSE: DEVSECOPS WITH AWS 
+   COURSE: DEVSECOPS WITH AWS  # global variables everywhere accept 
    DURATION: 10HR 
    TRAINER: SIVA 
   tasks: 
   - name: print course information 
-    vars: 
+    vars:   #local variables it woks here only 
       COURSE: ANSIBLE 
     ansible.builtin.debug: 
       msg: "Hello {{ COURSE }}, duration {{ DURATION }}, Trainer is {{ TRAINER }}" 
 
   - name: print course information 
     ansible.builtin.debug: 
-      msg: "Hello {{ COURSE }}, duration {{ DURATION }}, Trainer is {{ TRAINER }}"        
+      msg: "Hello {{ COURSE }}, duration {{ DURATION }}, Trainer is {{ TRAINER }}"         
