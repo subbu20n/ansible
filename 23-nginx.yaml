@@ -1,14 +1,12 @@
 - name: install nginx 
   hosts: dynamic_frontend 
   become: yes 
-  serial: 5
   tasks: 
   - name: install nginx 
     ansible.builtin.dnf: 
-       name: nginx 
-       state: installed 
-
-  - name: start nginx 
+        name: nginx 
+        state: installed  
+  - name: start and enable nginx 
     ansible.builtin.service: 
         name: nginx 
-        state: started 
+        state: started       
