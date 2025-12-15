@@ -7,7 +7,7 @@ regions:
 #    separator: "-"
 
 filters: 
-  tag:Name: frontend
+  #tag:Name: frontend
   instance-state-name: running 
 hostnames:
  - private-ip-address 
