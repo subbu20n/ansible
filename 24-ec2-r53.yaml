@@ -6,8 +6,8 @@
     - mysqllll  # ansible is poor in state management it creates another one when we do changes it wont do editing of same that one that is reason 
     - backend
     - frontend 
-    subnet_id: subnet-0bb6a6110e9180b91
-    sg_id: sg-0ad4f1d9859b4f090
+    subnet_id: subnet-08cbb8b109f6c3a00
+    sg_id: sg-0142286d0c870cdc5
     zone: subbuaws.site 
   tasks: 
   - name: create ec2 
