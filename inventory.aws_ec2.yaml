@@ -5,7 +5,10 @@ regions:
 #  - key: tags.Name 
 #    prefix: "dynamic"
 #    separator: "-"
-
+keyed-groups: 
+ - key: tags.Name 
+   prefix: "dynamic" 
+   seperator: "-"
 filters: 
   tag:Name: frontend
   instance-state-name: running 
